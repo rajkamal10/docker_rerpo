@@ -13,3 +13,9 @@ jobs:
               echo "Running tests for PR #${{ github.event.pull_request.number }}"
               echo "Another line of output"
 
+      - name: Install flake
+        run: install pip flake8
+
+      - name: run flake8
+        run: flake8
+
