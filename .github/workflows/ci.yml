@@ -25,7 +25,7 @@ jobs:
           python-version: '3.11'
 
       - name: unit test - flake8 install
-        run: install pip flake8
+        run: pip install flake8
 
       - name : run the flake8
         run: flake8 .
