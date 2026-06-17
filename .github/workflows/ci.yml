@@ -15,5 +15,6 @@ jobs:
 
       - name: Run the shell
         run: | 
+            whoami
             chmod +x add.sh
             ./add.sh
