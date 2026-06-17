@@ -18,3 +18,17 @@ jobs:
             whoami
             chmod +x add.sh
             ./add.sh
+      
+      - name: python install
+        uses: actions/checkout@v4
+        with:
+          python-version: '3.11'
+
+      - name: unit test - flake8 install
+        run: install pip flake8
+
+      - name : run the flake8
+        run: flake8 .
+        
+      - name: run python script 
+        run: python addition.py
