@@ -5,23 +5,21 @@ on:
       - main
 
 jobs:
-  lint:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       
-      - name: python setupz
+      - name: python setup
         uses : actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: unit test - flake8 installs
+      - name: unit test - flake8 install
         run: pip install flake8
 
-  build:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - uses: actions/checkout@v4
-      - name: Run Python script
+      - name : run the flake8
+        run: flake8 .
+        
+      - name: run python script 
         run: python addition.py
