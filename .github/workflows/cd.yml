@@ -10,12 +10,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: python setup
+      - name: python setupz
         uses : actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: unit test - flake8 install
+      - name: unit test - flake8 installs
         run: pip install flake8
 
       - name : run the flake8
