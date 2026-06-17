@@ -15,5 +15,11 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run the addition script
+      - name: unit test - flake8 install
+        run: pip install flake8
+
+      - name : run the flake8
+        run: flake8 .
+        
+      - name: run python script 
         run: python addition.py

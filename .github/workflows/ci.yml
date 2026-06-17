@@ -13,3 +13,22 @@ jobs:
               echo "Running tests for PR #${{ github.event.pull_request.number }}"
               echo "Another line of output"
 
+      - name: Run the shell
+        run: | 
+            whoami
+            chmod +x add.sh
+            ./add.sh
+      
+      - name: python install
+        uses: actions/checkout@v4
+        with:
+          python-version: '3.11'
+
+      - name: unit test - flake8 install
+        run: pip install flake8
+
+      - name : run the flake8
+        run: flake8 .
+        
+      - name: run python script 
+        run: python addition.py
