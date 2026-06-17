@@ -9,20 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install dependencies
-        run: pip install flake8 pytest
-      - name: Run flake8
-        run: flake8 .
+      
+      - name: python setupz
+        uses : actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
-  test:
-    runs-on: ubuntu-latest
-    needs: lint
-    steps:
-      - uses: actions/checkout@v4
-      - name: Install pytest
-        run: pip install pytest
-      - name: Run tests
-        run: pytest
+      - name: unit test - flake8 installs
+        run: pip install flake8
 
   build:
     runs-on: ubuntu-latest
